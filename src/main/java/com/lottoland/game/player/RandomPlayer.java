@@ -7,7 +7,7 @@ import com.lottoland.game.MoveType;
 public class RandomPlayer implements IPlayer {
 
 	public MoveType nextMove() {
-		Random generator = new Random(System.currentTimeMillis());
+		Random generator = new Random();
 		
 		int moveIndex = generator.nextInt(MoveType.values().length);
 		

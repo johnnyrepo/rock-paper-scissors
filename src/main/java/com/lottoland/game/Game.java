@@ -12,12 +12,18 @@ public class Game {
 
 		if (player1Move.equals(player2Move)) {
 			result = GameResult.DRAW;
-		} else if ((player1Move.ordinal() - player2Move.ordinal()) == 1
-				|| (player1Move.ordinal() - player2Move.ordinal()) == -2) {
-			result = GameResult.PLAYER_1_WIN;
 		} else {
-			result = GameResult.PLAYER_2_WIN;
+			result = player1Move.isWin(player2Move) ? GameResult.PLAYER_1_WIN : GameResult.PLAYER_2_WIN;
 		}
+		
+//		if (player1Move.equals(player2Move)) {
+//			result = GameResult.DRAW;
+//		} else if ((player1Move.ordinal() - player2Move.ordinal()) == 1
+//				|| (player1Move.ordinal() - player2Move.ordinal()) == -2) {
+//			result = GameResult.PLAYER_1_WIN;
+//		} else {
+//			result = GameResult.PLAYER_2_WIN;
+//		}
 
 		return result;
 	}
